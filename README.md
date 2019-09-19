@@ -23,3 +23,21 @@ region [区域和可用区](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/User
 
 [vue-s3-dropzone](https://madewithvuejs.com/vue-s3-dropzone) - Made with Vue.js    
 [Amazon S3 Browser Upload](https://www.shanestillwell.com/2018/09/02/amazon-file-upload/)  
+
+
+# vue 
+
+`vue create frontend`  Vue CLI v3.6.2  
+
+? Please pick a preset: Manually select features
+? Check the features needed for your project: Babel, Router, Vuex, Linter
+? Use history mode for router? (Requires proper server setup for index fallback in production) Yes
+? Pick a linter / formatter config: Basic
+? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)Lint on save
+? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? In dedicated config files
+? Save this as a preset for future projects? No
+
+```
+$ cd frontend
+$ yarn serve
+```
