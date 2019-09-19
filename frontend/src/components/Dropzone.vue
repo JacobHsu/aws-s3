@@ -13,6 +13,7 @@ import Dropzone from 'dropzone'
 import '../../node_modules/dropzone/dist/dropzone.css'
 //import lambda from '../lambda'
 
+// Disable auto discover for all elements:
 Dropzone.autoDiscover = false
 
 export default {
@@ -29,6 +30,8 @@ export default {
 
       // Hijack the xhr.send since Dropzone always upload file by using formData
       // ref: https://github.com/danialfarid/ng-file-upload/issues/743
+
+      // Called just before each file is sent. Gets the xhr object and the formData objects as second
       sending (file, xhr) {
         let _send = xhr.send
         xhr.send = () => {
@@ -37,6 +40,7 @@ export default {
       },
 
       // Upload one file at a time since we're using the S3 pre-signed URL scenario
+      // How many file uploads to process in parallel  default: 2
       parallelUploads: 1,
       uploadMultiple: false,
 
@@ -44,14 +48,16 @@ export default {
       // mismatch error from S3. We're going to update this for each file.
       header: '',
 
-      // Customize the wording
+      // Customize the wording  The text used before any files are dropped.
       dictDefaultMessage: document.querySelector('#dropzone-message').innerHTML,
 
       // We're going to process each file manually (see `accept` below)
       autoProcessQueue: false,
 
       // Here we request a signed upload URL when a file being accepted
+      // A function that gets a file and a done function as parameters. https://www.dropzonejs.com/
       accept (file, done) {
+        console.log(file, done)
         // lambda.getSignedURL(file)
         //   .then((url) => {
         //     file.uploadURL = url
