@@ -25,6 +25,11 @@ region [区域和可用区](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/User
 [Amazon S3 Browser Upload](https://www.shanestillwell.com/2018/09/02/amazon-file-upload/)  
 
 
+[vue-s3-dropzone](https://madewithvuejs.com/vue-s3-dropzone)    
+[DropzoneJS](https://www.dropzonejs.com/) is an open source library that provides drag’n’drop file uploads with image previews.  
+[Dropzone.js](https://gitlab.com/meno/dropzone) is a light weight JavaScript library that turns an HTML element into a dropzone.
+`npm i dropzone --save`  
+
 # vue 
 
 `vue create frontend`  Vue CLI v3.6.2  
