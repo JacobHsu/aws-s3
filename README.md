@@ -20,6 +20,7 @@ region [区域和可用区](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/User
 
 [aws s3直接通过JavaScript上传文件](https://blog.csdn.net/qq1147093833/article/details/80267542)  
 [将照片通过浏览器上传到Amazon S3服务](https://blog.csdn.net/sdiudui/article/details/79928631)  
+aws-doc-sdk-examples/javascript/example_code/s3/s3_photoExample.html
 
 [vue-s3-dropzone](https://madewithvuejs.com/vue-s3-dropzone) - Made with Vue.js    
 [Amazon S3 Browser Upload](https://www.shanestillwell.com/2018/09/02/amazon-file-upload/)  
