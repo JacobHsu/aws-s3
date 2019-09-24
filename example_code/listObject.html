@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <script src="./config.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <div id="keys"></div>
+    <script>
+        //https://docs.aws.amazon.com/zh_tw/sdk-for-javascript/v2/developer-guide/s3-example-photo-album.html
+
+        AWS.config.update({
+            region: bucketRegion,
+            credentials: {
+                accessKeyId: accessKeyId,
+                secretAccessKey: secretAccessKey
+            } 
+        });
+
+        var s3 = new AWS.S3({params: {Bucket: albumBucketName}});  //选择桶
+
+        //listObjects     
+        s3.listObjects(function(err, data) {
+            if (err) {
+                console.log(err, err.stack); // an error occurred
+                throw err;
+            }
+            console.log(data);           // successful response
+            
+            var keys = '存储桶里面的所有对象 Keys:<br />';
+
+            $.each(data.Contents, function (index, obj) {
+               keys += (index + '：' + obj.Key + '<br />');
+            });
+
+            $("#keys").html(keys);
+        });
+    </script> 
+</body>
+</html>
