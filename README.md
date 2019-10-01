@@ -26,6 +26,14 @@ aws-doc-sdk-examples/javascript/example_code/s3/s3_photoExample.html
 [Amazon S3 Browser Upload](https://www.shanestillwell.com/2018/09/02/amazon-file-upload/)  
 
 
+```js
+s3.upload({
+    Key: photoKey,
+    Body: file,
+    ContentType: 'image/png', //必須設格式才可以外連 否則變圖檔下載   預設 "application/octet-stream" 
+    ACL: 'public-read'
+```
+
 ## vue-s3-dropzone
 
 [vue-s3-dropzone](https://madewithvuejs.com/vue-s3-dropzone)    

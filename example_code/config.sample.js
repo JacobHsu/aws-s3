@@ -4,3 +4,4 @@ var bucketRegion = 'REGION';
 
 var accessKeyId = 'accessKeyId';
 var secretAccessKey = 'secretAccessKey';
+
